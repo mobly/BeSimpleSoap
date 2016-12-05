@@ -28,8 +28,9 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  * @author Christian Kerl <christian-kerl@web.de>
  * @author Francis Besset <francis.besset@gmail.com>
  */
-class SoapWebServiceController extends ContainerAware
+class SoapWebServiceController
 {
+    use Symfony\Component\DependencyInjection\ContainerAwareTrait;
     /**
      * @var \SoapServer
      */
