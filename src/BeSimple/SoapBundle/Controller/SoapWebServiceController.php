@@ -17,6 +17,7 @@ use BeSimple\SoapBundle\Soap\SoapRequest;
 use BeSimple\SoapBundle\Soap\SoapResponse;
 use BeSimple\SoapServer\SoapServerBuilder;
 use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\FlattenException;
@@ -30,7 +31,7 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  */
 class SoapWebServiceController
 {
-    use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+    use ContainerAwareTrait;
     /**
      * @var \SoapServer
      */
