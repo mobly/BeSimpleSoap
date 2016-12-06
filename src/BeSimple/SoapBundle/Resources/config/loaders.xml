@@ -11,6 +11,7 @@
         <parameter key="besimple.soap.definition.loader.annot_file.class">BeSimple\SoapBundle\ServiceDefinition\Loader\AnnotationFileLoader</parameter>
         <parameter key="besimple.soap.definition.loader.annot_class.class">BeSimple\SoapBundle\ServiceDefinition\Loader\AnnotationClassLoader</parameter>
         <parameter key="besimple.soap.definition.loader.annot_complextype.class">BeSimple\SoapBundle\ServiceDefinition\Loader\AnnotationComplexTypeLoader</parameter>
+        <parameter key="besimple.soap.controller.class">BeSimple\SoapBundle\Controller\SoapWebServiceController</parameter>
     </parameters>
 
     <services>
@@ -36,6 +37,11 @@
             <tag name="besimple.soap.definition.loader" />
             <argument type="service" id="annotation_reader" />
             <argument type="service" id="besimple.soap.type.repository" />
+        </service>
+        <service id="besimple.soap.controller" class="%besimple.soap.controller.class%">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
         </service>
     </services>
 
